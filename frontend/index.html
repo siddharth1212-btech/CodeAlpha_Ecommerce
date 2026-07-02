@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Siddharth E-Commerce Store
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        Loading...
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+    <div class="logo">
+
+        <a href="index.html">
+
+            🛒 Siddharth Store
+
+        </a>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="cart.html">
+            Cart
+        </a>
+
+        <a href="orders.html">
+            Orders
+        </a>
+
+        <a href="wishlist.html">
+
+            Wishlist
+
+            (
+
+            <span id="wish-count">
+
+                0
+
+            </span>
+
+            )
+
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </div>
+
+    <div class="nav-buttons">
+
+        <a href="login.html">
+
+            <button>
+
+                Login
+
+            </button>
+
+        </a>
+
+        <button onclick="showNotification()">
+
+            🔔
+
+        </button>
+
+        <button onclick="toggleDarkMode()">
+
+            🌙
+
+        </button>
+
+        <button onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>
+
+    <!-- Title -->
+    <h1>
+        Siddharth E-Commerce Store
+    </h1>
+
+    <!-- Welcome -->
+    <h2 id="welcome"></h2>
+
+    <!-- Hero -->
+    <div class="hero">
+
+    <div class="hero-left">
+
+        <h1>
+
+            Premium Electronics
+            Store
+
+        </h1>
+
+        <p>
+
+            Discover the latest
+            smartphones,
+            laptops and
+            accessories at
+            unbeatable prices.
+
+        </p>
+
+        <button>
+
+            Shop Now
+
+        </button>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img
+            src="images/iphone.jpg"
+            alt="Hero Product">
+
+    </div>
+
+</div>
+<div class="promo-banner">
+
+    <h1>
+        🔥 Mega Electronics Sale
+    </h1>
+
+    <p>
+        Up To 50% OFF On Smartphones,
+        Laptops & Accessories
+    </p>
+
+    <button>
+        Shop Now
+    </button>
+
+</div>
+
+    <!-- Offer -->
+    <div class="offer">
+
+        🔥 BIG SALE:
+        50% OFF
+        On Electronics
+
+    </div>
+
+    <!-- COUNTDOWN -->
+
+<div class="countdown">
+
+    <h2>
+
+        Flash Sale Ends In
+
+    </h2>
+
+    <div id="timer">
+
+        00:00:00
+
+    </div>
+
+</div>
+
+    <!-- Stats -->
+    <div class="stats">
+
+        <div>
+            <h2>500+</h2>
+            <p>Products</p>
+        </div>
+
+        <div>
+            <h2>1000+</h2>
+            <p>Customers</p>
+        </div>
+
+        <div>
+            <h2>250+</h2>
+            <p>Orders</p>
+        </div>
+
+    </div>
+
+   
+</div>
+
+ <!-- Cart Status -->
+<div class="cart-status">
+    🛒 Cart Items:
+    <span id="cart-count">
+        0
+    </span>
+</div>
+
+    <!-- Categories -->
+    <div class="categories">
+
+        <button onclick="filterCategory('all')">
+            All
+        </button>
+
+        <button onclick="filterCategory('mobile')">
+            📱 Mobiles
+        </button>
+
+        <button onclick="filterCategory('laptop')">
+            💻 Laptops
+        </button>
+
+        <button onclick="filterCategory('headphone')">
+            🎧 Headphones
+        </button>
+
+    </div>
+    
+
+    <!-- Search -->
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="Search Product..."
+        onkeyup="searchProduct()">
+    <br><br>
+
+    <div class="shop-header">
+    <div>
+        <h2>
+            Featured Products
+        </h2>
+        <p>
+            Explore our latest collection
+        </p>
+    </div>
+    <div class="sort-box">
+        <select id="sort">
+            <option>
+                Sort By
+            </option>
+            <option>
+                Price: Low To High
+            </option>
+            <option>
+                Price: High To Low
+            </option>
+            <option>
+                Top Rated
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="section-title">
+
+    <h2>
+
+        Featured Products
+
+    </h2>
+
+    <p>
+
+        Explore our best selling products
+
+    </p>
+
+</div>
+<!-- Products -->
+
+<div class="products">
+
+
+
+    <!-- iPhone -->
+    <div class="product search-item mobile">
+    <div class="product-header">
+        Apple
+    </div>
+    <span class="badge">
+        Best Seller
+    </span>
+    <img
+        src="images/iphone.jpg"
+        alt="iPhone">
+    <h2>
+        iPhone 15
+    </h2>
+
+        <p>Price: ₹70,000</p>
+        <p class="stock">
+
+    ✅ In Stock
+
+</p>
+
+        <p>⭐⭐⭐⭐⭐ (4.8/5)</p>
+
+        <div class="quantity">
+
+            <button onclick="decreaseQuantity('iphone')">-</button>
+
+            <span id="iphone-qty">1</span>
+
+            <button onclick="increaseQuantity('iphone')">+</button>
+
+        </div>
+
+        <p id="iphone-price">
+            Total: ₹70000
+        </p>
+        <button class="add-cart">
+            Add To Cart
+        </button>
+        <button onclick="addWishlist('iPhone 15')">
+            ❤️ Wishlist
+        </button>
+        <br><br>
+        <a href="product-iphone.html">
+            <button>
+                View Details
+            </button>
+        </a>
+        <br><br>
+        <textarea
+            id="review-iphone"
+            placeholder="Write Review">
+        </textarea>
+        <br><br>
+        <button onclick="submitReview('review-iphone')">
+            Submit Review
+        </button>
+    </div>
+
+
+
+
+    <!-- Samsung -->
+    <div class="product search-item mobile">
+
+    <div class="product-header">
+
+        Samsung
+
+    </div>
+
+    <span class="badge">
+
+        New Arrival
+
+    </span>
+        <img src="images/samsung.jpg" alt="Samsung">
+        <h2>Samsung S24</h2>
+        <p>Price: ₹65,000</p>
+        <p class="stock">
+    ✅ In Stock
+
+    </p>
+
+        <p>⭐⭐⭐⭐☆ (4.5/5)</p>
+        <div class="quantity">
+    <button onclick="decreaseQuantity('samsung')">
+        -
+    </button>
+    <span id="samsung-qty">
+        1
+    </span>
+    <button onclick="increaseQuantity('samsung')">
+        +
+    </button>
+    </div>
+    <p id="samsung-price">
+    Total: ₹65000
+    </p>
+        <button class="add-cart">
+            Add To Cart
+        </button>
+        <button onclick="addWishlist('Samsung S24')">
+            ❤️ Wishlist
+        </button>
+        <br><br>
+
+<a href="product-samsung.html">
+
+    <button>
+        View Details
+    </button>
+
+</a>
+        <br><br>
+        <textarea
+            id="review-samsung"
+            placeholder="Write Review">
+        </textarea>
+        <br><br>
+        <button onclick="submitReview('review-samsung')">
+            Submit Review
+        </button>
+    </div>
+
+
+
+
+    <!-- OnePlus -->
+    <div class="product search-item mobile">
+
+    <div class="product-header">
+
+        OnePlus
+
+    </div>
+
+    <span class="badge">
+
+        Trending
+
+    </span>
+        <img src="images/oneplus.jpg" alt="OnePlus">
+        <h2>OnePlus 13</h2>
+        <p>Price: ₹55,000</p>
+        <p class="stock">
+    🔥 Only 5 Left
+    </p>
+        <p>⭐⭐⭐⭐☆ (4.4/5)</p>
+        <div class="quantity">
+    <button onclick="decreaseQuantity('oneplus')">
+        -
+    </button>
+    <span id="oneplus-qty">
+        1
+    </span>
+    <button onclick="increaseQuantity('oneplus')">
+        +
+    </button>
+    </div>
+    <p id="oneplus-price">
+    Total: ₹55000
+    </p>
+
+        <button class="add-cart">
+            Add To Cart
+        </button>
+
+        <button onclick="addWishlist('OnePlus 13')">
+            ❤️ Wishlist
+        </button>
+        <br><br>
+
+<a href="product-oneplus.html">
+
+    <button>
+        View Details
+    </button>
+
+</a>
+        <br><br>
+        <textarea
+            id="review-oneplus"
+            placeholder="Write Review">
+        </textarea>
+        <br><br>
+        <button onclick="submitReview('review-oneplus')">
+            Submit Review
+        </button>
+    </div>
+
+
+
+
+
+    <!-- Laptop -->
+    <div class="product search-item laptop">
+
+    <div class="product-header">
+
+        HP
+
+    </div>
+    <span class="badge">
+
+        Demanded
+
+
+    </span>
+
+    <img
+        src="images/laptop.jpg"
+        alt="Laptop">
+
+    <h2>
+        HP Victus
+    </h2>
+
+    <p>
+        Price: ₹75,000
+    </p>
+
+    <p class="stock">
+        🔥 Limited Stock
+    </p>
+
+    <p>
+        ⭐⭐⭐⭐☆ (4.6/5)
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('laptop')">
+            -
+        </button>
+
+        <span id="laptop-qty">
+            1
+        </span>
+
+        <button
+            onclick="increaseQuantity('laptop')">
+            +
+        </button>
+
+    </div>
+
+    <p id="laptop-price">
+        Total: ₹75000
+    </p>
+
+    <button class="add-cart">
+        Add To Cart
+    </button>
+
+    <button
+        onclick="addWishlist('HP Victus')">
+        ❤️ Wishlist
+    </button>
+
+    <a href="product-laptop.html">
+        <button>
+            View Details
+        </button>
+    </a>
+
+    <textarea
+        id="review-laptop"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-laptop')">
+        Submit Review
+    </button>
+
+</div>
+
+
+
+
+    <!-- Headphones -->
+    <div class="product search-item headphone">
+
+    <div class="product-header">
+
+        Boat
+
+    </div>
+    <span class="badge">
+
+        Trending
+
+    </span>
+
+    <img
+        src="images/headphone.jpg"
+        alt="Headphone">
+
+    <h2>
+        Boat Rockerz
+    </h2>
+
+    <p>
+        Price: ₹2,500
+    </p>
+
+    <p class="stock">
+        ✅ In Stock
+    </p>
+
+    <p>
+        ⭐⭐⭐⭐☆ (4.3/5)
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('headphone')">
+            -
+        </button>
+
+        <span id="headphone-qty">
+            1
+        </span>
+
+        <button
+            onclick="increaseQuantity('headphone')">
+            +
+        </button>
+
+    </div>
+
+    <p id="headphone-price">
+        Total: ₹2500
+    </p>
+
+    <button class="add-cart">
+        Add To Cart
+    </button>
+
+    <button
+        onclick="addWishlist('Boat Rockerz')">
+        ❤️ Wishlist
+    </button>
+
+    <a href="product-headphone.html">
+        <button>
+            View Details
+        </button>
+    </a>
+
+    <textarea
+        id="review-headphone"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-headphone')">
+        Submit Review
+    </button>
+
+</div>
+<!-- iPhone 15 Pro -->
+<div class="product search-item mobile">
+
+    <div class="product-header">
+
+        Apple
+
+    </div>
+
+    <span class="badge">
+
+        Premium
+
+    </span>
+
+    <img
+        src="images/iphone-pro.jpg"
+        alt="iPhone 15 Pro">
+
+    <h2>
+
+        iPhone 15 Pro
+
+    </h2>
+
+    <p>
+
+        Price: ₹1,20,000
+
+    </p>
+
+    <p class="stock">
+
+        ✅ In Stock
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐⭐ (4.9/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('iphonepro')">
+
+            -
+
+        </button>
+
+        <span id="iphonepro-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('iphonepro')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="iphonepro-price">
+
+        Total: ₹120000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('iPhone 15 Pro')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-iphonepro.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-iphonepro"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-iphonepro')">
+
+        Submit Review
+
+    </button>
+
+</div>
+<!-- Samsung Z Fold -->
+<div class="product search-item mobile">
+
+    <div class="product-header">
+
+        Samsung
+
+    </div>
+
+    <span class="badge">
+
+        Foldable
+
+    </span>
+
+    <img
+        src="images/fold.jpg"
+        alt="Samsung Fold">
+
+    <h2>
+
+        Samsung Z Fold
+
+    </h2>
+
+    <p>
+
+        Price: ₹145000
+
+    </p>
+
+    <p class="stock">
+
+        ✅ In Stock
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐⭐ (4.8/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('fold')">
+
+            -
+
+        </button>
+
+        <span id="fold-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('fold')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="fold-price">
+
+        Total: ₹145000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('Samsung Z Fold')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-fold.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-fold"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-fold')">
+
+        Submit Review
+
+    </button>
+
+</div>
+<!-- Google Pixel 9 -->
+<div class="product search-item mobile">
+
+    <div class="product-header">
+
+        Google
+
+    </div>
+
+    <span class="badge">
+
+        AI Phone
+
+    </span>
+
+    <img
+        src="images/pixel.jpg"
+        alt="Google Pixel">
+
+    <h2>
+
+        Google Pixel 9
+
+    </h2>
+
+    <p>
+
+        Price: ₹80000
+
+    </p>
+
+    <p class="stock">
+
+        ✅ In Stock
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐☆ (4.6/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('pixel')">
+
+            -
+
+        </button>
+
+        <span id="pixel-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('pixel')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="pixel-price">
+
+        Total: ₹80000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('Google Pixel 9')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-pixel.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-pixel"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-pixel')">
+
+        Submit Review
+
+    </button>
+
+</div>
+<!-- Nothing Phone 3 -->
+<div class="product search-item mobile">
+
+    <div class="product-header">
+
+        Nothing
+
+    </div>
+
+    <span class="badge">
+
+        Trending
+
+    </span>
+
+    <img
+        src="images/nothing.jpg"
+        alt="Nothing Phone">
+
+    <h2>
+
+        Nothing Phone 3
+
+    </h2>
+
+    <p>
+
+        Price: ₹45000
+
+    </p>
+
+    <p class="stock">
+
+        🔥 Only 5 Left
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐☆ (4.5/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('nothing')">
+
+            -
+
+        </button>
+
+        <span id="nothing-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('nothing')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="nothing-price">
+
+        Total: ₹45000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('Nothing Phone 3')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-nothing.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-nothing"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-nothing')">
+
+        Submit Review
+
+    </button>
+
+</div>
+<!-- MacBook Air M3 -->
+<div class="product search-item laptop">
+
+    <div class="product-header">
+
+        Apple
+
+    </div>
+
+    <span class="badge">
+
+        Premium
+
+    </span>
+
+    <img
+        src="images/macbook.jpg"
+        alt="MacBook">
+
+    <h2>
+
+        MacBook Air M3
+
+    </h2>
+
+    <p>
+
+        Price: ₹110000
+
+    </p>
+
+    <p class="stock">
+
+        ✅ In Stock
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐⭐ (4.9/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('macbook')">
+
+            -
+
+        </button>
+
+        <span id="macbook-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('macbook')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="macbook-price">
+
+        Total: ₹110000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('MacBook Air M3')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-macbook.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-macbook"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-macbook')">
+
+        Submit Review
+
+    </button>
+
+</div>
+<!-- ASUS ROG -->
+<div class="product search-item laptop">
+
+    <div class="product-header">
+
+        ASUS
+
+    </div>
+
+    <span class="badge">
+
+        Gaming
+
+    </span>
+
+    <img
+        src="images/rog.jpg"
+        alt="ASUS ROG">
+
+    <h2>
+
+        ASUS ROG
+
+    </h2>
+
+    <p>
+
+        Price: ₹95000
+
+    </p>
+
+    <p class="stock">
+
+        🔥 Gaming Beast
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐⭐ (4.8/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('rog')">
+
+            -
+
+        </button>
+
+        <span id="rog-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('rog')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="rog-price">
+
+        Total: ₹95000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('ASUS ROG')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-rog.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-rog"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-rog')">
+
+        Submit Review
+
+    </button>
+
+</div>
+<!-- Lenovo Legion -->
+<div class="product search-item laptop">
+
+    <div class="product-header">
+
+        Lenovo
+
+    </div>
+
+    <span class="badge">
+
+        Gaming
+
+    </span>
+
+    <img
+        src="images/legion.jpg"
+        alt="Lenovo Legion">
+
+    <h2>
+
+        Lenovo Legion
+
+    </h2>
+
+    <p>
+
+        Price: ₹90000
+
+    </p>
+
+    <p class="stock">
+
+        ✅ In Stock
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐☆ (4.6/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('legion')">
+
+            -
+
+        </button>
+
+        <span id="legion-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('legion')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="legion-price">
+
+        Total: ₹90000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('Lenovo Legion')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-legion.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-legion"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-legion')">
+
+        Submit Review
+
+    </button>
+
+</div><!-- Dell XPS -->
+<div class="product search-item laptop">
+
+    <div class="product-header">
+
+        Dell
+
+    </div>
+
+    <span class="badge">
+
+        Business
+
+    </span>
+
+    <img
+        src="images/dell.jpg"
+        alt="Dell XPS">
+
+    <h2>
+
+        Dell XPS
+
+    </h2>
+
+    <p>
+
+        Price: ₹85000
+
+    </p>
+
+    <p class="stock">
+
+        ✅ In Stock
+
+    </p>
+
+    <p>
+
+        ⭐⭐⭐⭐☆ (4.5/5)
+
+    </p>
+
+    <div class="quantity">
+
+        <button
+            onclick="decreaseQuantity('dell')">
+
+            -
+
+        </button>
+
+        <span id="dell-qty">
+
+            1
+
+        </span>
+
+        <button
+            onclick="increaseQuantity('dell')">
+
+            +
+
+        </button>
+
+    </div>
+
+    <p id="dell-price">
+
+        Total: ₹85000
+
+    </p>
+
+    <button class="add-cart">
+
+        Add To Cart
+
+    </button>
+
+    <button
+        onclick="addWishlist('Dell XPS')">
+
+        ❤️ Wishlist
+
+    </button>
+
+    <a href="product-dell.html">
+
+        <button>
+
+            View Details
+
+        </button>
+
+    </a>
+
+    <textarea
+        id="review-dell"
+        placeholder="Write Review">
+    </textarea>
+
+    <button
+        onclick="submitReview('review-dell')">
+
+        Submit Review
+
+    </button>
+
+</div>
+
+
+</div>
+
+<div class="reviews-section">
+
+    <h2>
+
+        What Our Customers Say
+
+    </h2>
+
+    <div class="review-card">
+
+        ⭐⭐⭐⭐⭐
+
+        <p>
+
+            "Amazing products and
+            fast delivery!"
+
+        </p>
+
+        <h4>
+
+            - Rahul Sharma
+
+        </h4>
+
+    </div>
+    <div class="review-card">
+        ⭐⭐⭐⭐⭐
+        <p>
+            "Best shopping
+            experience."
+        </p>
+        <h4>
+            - Priya Verma
+        </h4>
+    </div>
+    <div class="review-card">
+        ⭐⭐⭐⭐☆
+        <p>
+        "Good quality and
+            affordable price."
+        </p>
+        <h4>
+            - Aman Singh
+        </h4>
+    </div>
+</div>
+<div class="brands">
+    <h2>
+        Trusted Brands
+    </h2>
+    <div class="brand-list">
+        <div>
+            🍎 Apple
+        </div>
+        <div>
+            📱 Samsung
+        </div>
+        <div>
+            ⚡ OnePlus
+        </div>
+        <div>
+            💻 HP
+        </div>
+        <div>
+            🎧 Boat
+        </div>
+    </div>
+</div>
+<div class="features">
+    <h2>
+        Why Choose Us?
+    </h2>
+    <div class="feature-box">
+        <div>
+            🚚
+            <h3>
+                Free Delivery
+            </h3>
+        </div>
+        <div>
+            🔒
+            <h3>
+                Secure Payment
+            </h3>
+        </div>
+        <div>
+            ↩️
+            <h3>
+                Easy Returns
+            </h3>
+        </div>
+        <div>
+            ⭐
+            <h3>
+                Best Quality
+            </h3>
+        </div>
+    </div>
+</div>
+    <!-- Newsletter -->
+    <div class="newsletter">
+        <h2>
+            Subscribe Newsletter
+        </h2>
+        <input
+            type="email"
+            id="newsletter"
+            placeholder="Enter Email">
+
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
+    </div>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>
+                🛒 Siddharth Store
+            </h3>
+            <p>
+                Your trusted destination
+                for smartphones,
+                laptops and accessories.
+            </p>
+        </div>
+        <div class="footer-section">
+            <h3>
+                Quick Links
+            </h3>
+            <a href="index.html">
+                Home
+            </a>
+            <a href="cart.html">
+                Cart
+            </a>
+            <a href="orders.html">
+                Orders
+            </a>
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+        </div>
+        <div class="footer-section">
+            <h3>
+                Support
+            </h3>
+            <a href="about.html">
+                About Us
+            </a>
+            <a href="contact.html">
+                Contact Us
+            </a>
+            <p>
+                📧 support@siddharthstore.com
+            </p>
+        </div>
+    </div>
+    <hr>
+<div class="social">
+    <a href="#">
+        Instagram
+    </a>
+    |
+    <a href="#">
+        LinkedIn
+    </a>
+    |
+    <a href="#">
+        GitHub
+    </a>
+</div>
+    <p class="copyright">
+
+        © 2026 Siddharth Store |
+        All Rights Reserved
+
+    </p>
+
+</footer>
+
+    <script src="script.js"></script>
+<a
+    href="cart.html"
+    class="floating-cart">
+
+    🛒
+
+</a>
+
+
+<button
+    id="topBtn"
+    onclick="topFunction()">
+
+    ⬆
+
+</button>
+<button
+    class="chat-btn"
+    onclick="openChat()">
+
+    💬
+
+</button>
+<button
+    id="topBtn"
+    onclick="scrollToTop()">
+
+    ⬆
+
+</button>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+    <a href="wishlist.html">Wishlist</a>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+</nav>
+
+<h1>Shopping Cart</h1>
+
+<div class="coupon">
+
+    <input
+        type="text"
+        id="couponCode"
+        placeholder="Enter Coupon Code"
+    >
+
+    <button onclick="applyCoupon()">
+        Apply Coupon
+    </button>
+
+</div>
+
+<h2>Select Payment Method</h2>
+
+<div class="payment">
+
+    <label>
+        <input
+            type="radio"
+            name="payment"
+            value="Cash On Delivery"
+            checked
+        >
+        💵 Cash On Delivery
+    </label>
+
+    <br><br>
+
+    <label>
+        <input
+            type="radio"
+            name="payment"
+            value="UPI"
+        >
+        📱 UPI
+    </label>
+
+    <br><br>
+
+    <label>
+        <input
+            type="radio"
+            name="payment"
+            value="Card"
+        >
+        💳 Debit/Credit Card
+    </label>
+
+</div>
+
+<br>
+
+<h3 id="discountMessage"></h3>
+
+<br>
+
+<ul id="cartItems"></ul>
+
+<br>
+
+<button onclick="placeOrder()">
+    Place Order
+</button>
+
+<button onclick="clearCart()">
+    Clear Cart
+</button>
+
+<script>
+
+let cartData =
+    JSON.parse(
+        localStorage.getItem(
+            "cart"
+        )
+    ) || [];
+
+const cartItems =
+    document.getElementById(
+        "cartItems"
+    );
+
+function displayCart() {
+
+    cartItems.innerHTML = "";
+
+    if (cartData.length === 0) {
+
+        cartItems.innerHTML =
+            "<h2>Cart Is Empty</h2>";
+
+        return;
+    }
+
+    cartData.forEach(
+        (item, index) => {
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+            li.innerHTML =
+                `
+                ${item}
+
+                <button
+                    onclick=
+                    "removeItem(${index})">
+                    ❌ Remove
+                </button>
+                `;
+
+            cartItems
+                .appendChild(
+                    li
+                );
+
+        }
+    );
+
+}
+
+function removeItem(index) {
+
+    cartData.splice(
+        index,
+        1
+    );
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(
+            cartData
+        )
+    );
+
+    displayCart();
+
+}
+
+displayCart();
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

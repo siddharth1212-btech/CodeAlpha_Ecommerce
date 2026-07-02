@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Checkout
+
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                🛒 Siddharth Store
+
+            </a>
+
+        </div>
+
+    </nav>
+
+    <div class="payment-container">
+
+        <h1>
+
+            Checkout
+
+        </h1>
+
+        <h2>
+
+            Total:
+            ₹70,000
+
+        </h2>
+
+        <div class="payment-method">
+
+            <h3>
+
+                Select Payment Method
+
+            </h3>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="UPI"
+                    checked>
+
+                UPI
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="Credit Card">
+
+                Credit Card
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="Cash On Delivery">
+
+                Cash On Delivery
+
+            </label>
+
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="placeOrder()">
+
+            Place Order
+
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

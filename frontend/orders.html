@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Order History
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                🛒 Siddharth Store
+
+            </a>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </div>
+
+        <div class="nav-buttons">
+
+            <button onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Heading -->
+
+    <h1>
+
+        📦 Your Orders
+
+    </h1>
+
+    <!-- Orders -->
+
+    <ul id="orderList">
+
+    </ul>
+
+    <script>
+
+        const orders =
+            JSON.parse(
+                localStorage.getItem(
+                    "orders"
+                )
+            ) || [];
+
+        const orderList =
+            document.getElementById(
+                "orderList"
+            );
+
+        if(
+            orders.length === 0
+        ){
+
+            orderList.innerHTML =
+                "<h2>No Orders Yet</h2>";
+
+        }
+
+        orders.forEach(
+            order => {
+
+                const li =
+                    document.createElement(
+                        "li"
+                    );
+
+                li.innerHTML = `
+
+                    <h3>
+
+                        ${order}
+
+                    </h3>
+
+                    <p>
+
+                        Status:
+                        📦 Processing
+
+                    </p>
+
+                    <progress
+                        value="70"
+                        max="100">
+                    </progress>
+
+                    <br><br>
+
+                    <a href="tracking.html">
+
+                        <button>
+
+                            Track Order
+
+                        </button>
+
+                    </a>
+
+                `;
+
+                orderList.appendChild(
+                    li
+                );
+
+            }
+        );
+
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

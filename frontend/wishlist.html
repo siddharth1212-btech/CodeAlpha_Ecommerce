@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="orders.html">Orders</a>
+        <a href="wishlist.html">Wishlist</a>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+    </nav>
+
+    <h1>❤️ My Wishlist</h1>
+
+    <ul id="wishlistItems"></ul>
+
+    <script>
+
+        const wishlist =
+            JSON.parse(
+                localStorage.getItem(
+                    "wishlist"
+                )
+            ) || [];
+
+        const wishlistItems =
+            document.getElementById(
+                "wishlistItems"
+            );
+
+        if (wishlist.length === 0) {
+
+            wishlistItems.innerHTML =
+                "<h2>No Items In Wishlist</h2>";
+
+        }
+
+        wishlist.forEach(item => {
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+            li.innerHTML = item;
+
+            wishlistItems.appendChild(
+                li
+            );
+
+        });
+
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
